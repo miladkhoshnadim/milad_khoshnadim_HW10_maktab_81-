@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Tooltip */
+  .test + .tooltip > .tooltip-inner {
+    background-color: #a0e2f3;  
+    border: 1px solid green; 
+    padding: 10px;
+    font-size: 20px;
+  }
+ 
+  .test + .tooltip.bottom > .tooltip-arrow {
+    border-bottom: 5px solid blue;
+  }
+ 
+  </style>
+</head>
+<body>
+
+<main> 
+    <div class="container" >
+        <h3>Tooltip Milad </h3>
+        <ul class="list-inline">
+        <li><a class="test" href="#" data-toggle="tooltip" data-placement="auto bottom" title="Milad inja!">Top</a></li>
+        <li><a class="test" href="#" data-toggle="tooltip" data-placement="auto bottom" title="Milad onja!">Bottom</a></li>
+        <li><a class="test" href="#" data-toggle="tooltip" data-placement="auto bottom" title="milad coja!">Left</a></li>
+        <li><a class="test" href="#" data-toggle="tooltip" data-placement="auto bottom" title="milad hameja!">Right</a></li>
+        </ul>
+    </div>
+</main>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .div-paragraf{
+        margin: 10px auto;
+        width: 550px;
+        background-color: aqua;
+        padding: 10px;
+    }
+    .paragraf{
+        border-bottom: 2px solid rgb(248, 147, 88);
+        padding: 0px 10px 40px;
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="div-paragraf">
+            <div class="paragraf" id="text">
+                <h1> Horsse</h1>
+                <p >A DOMTokenList representing the contents of the element's class attribute.
+                    If the class attribute is not set or empty, it returns an empty DOMTokenList, i.e. 
+                    a DOMTokenList with the length property equal to 0.Although the classList property itself is read-only, 
+                    you can modify its associated DOMTokenList using the add(), remove(), replace(), and toggle() methods.
+               </p>
+            </div>
+            <div class="paragraf">
+                <h1> Dunkey</h1>
+                <p >A DOMTokenList representing the contents of the element's class attribute.
+                    If the class attribute is not set or empty, it returns an empty DOMTokenList, i.e. 
+                    a DOMTokenList with the length property equal to 0.Although the classList property itself is read-only, 
+                    you can modify its associated DOMTokenList using the add(), remove(), replace(), and toggle() methods.
+               </p>
+            </div>
+            <div class="paragraf">
+                <h1> Fish</h1>
+                <p >A DOMTokenList representing the contents of the element's class attribute.
+                    If the class attribute is not set or empty, it returns an empty DOMTokenList, i.e. 
+                    a DOMTokenList with the length property equal to 0.Although the classList property itself is read-only, 
+                    you can modify its associated DOMTokenList using the add(), remove(), replace(), and toggle() methods.
+               </p>
+            </div>
+            <div class="paragraf">
+                <h1> Dog</h1>
+                <p >A DOMTokenList representing the contents of the element's class attribute.
+                    If the class attribute is not set or empty, it returns an empty DOMTokenList, i.e. 
+                    a DOMTokenList with the length property equal to 0.Although the classList property itself is read-only, 
+                    you can modify its associated DOMTokenList using the add(), remove(), replace(), and toggle() methods.
+               </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        [...document.getElementsByClassName('paragraf')].forEach(function(element, ind){
+            element.style.position = 'relative';
+            const divv = document.createElement('div');
+            divv.style.top = '10px';
+            divv.style.right = '10px';
+            divv.style.position = 'absolute';
+            divv.style.fontSize = '20px';
+            divv.style.backgroundColor = 'rgb(250, 151, 126)';
+            divv.innerText = '[+]';
+            divv.setAttribute("id",`${ind}`)
+            divv.setAttribute("onclick",`remove(id)`)
+            element.appendChild(divv);
+        });
+
+        function remove(id){
+            const remover = document.getElementById(`${id}`);
+            remover.style.fontSize = '30px';
+            remover.style.backgroundColor = 'rgb(250, 51, 126)';
+            remover.innerText = 'removed me!!!';
+            remover.parentElement.style.backgroundColor = 'rgb(250, 151, 126)';
+            setTimeout(function(){  
+                remover.parentElement.remove();
+            },1500)
+        }
+
+    </script>
+</body>
+</html>

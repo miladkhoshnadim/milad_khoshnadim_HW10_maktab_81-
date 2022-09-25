@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #f8c8a1;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  /* cursor: pointer; */
+}
+
+.dropbtn:hover {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+   overflow: auto; 
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+   z-index: 1; 
+}
+
+.dropdown-content li {
+  color: black;
+  padding: 12px 10px;
+  text-decoration: none; 
+} 
+
+.dropdown li:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+
+<h1>Click to open menu of MILADKHOSHNADIM.</h1>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Sweeties (click me)!</button>
+  <div id="myDropdown" class="dropdown-content">
+    <ul>
+        <li>Cake</li>
+        <li>Donut</li>
+        <li>Honey</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+/* user clicks on the button */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementById("myDropdown");
+        // console.log(dropdowns)
+        if (dropdowns.classList.contains('show')) {
+            dropdowns.classList.remove('show');
+       }
+    }
+}
+
+</script>
+
+</body>
+</html>
